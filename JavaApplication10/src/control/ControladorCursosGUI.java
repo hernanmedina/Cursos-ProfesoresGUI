@@ -3,6 +3,7 @@ package control;
 import modelo.Curso;
 import modelo.GestionUnivalle;
 import modelo.Profesor;
+import modelo.Programa;
 import vista.CursosGUI;
 /**
  *
@@ -25,27 +26,31 @@ public class ControladorCursosGUI implements ActionListener {
         this.vistaCursos.btn_buscarCurso.addActionListener(this);
         this.vistaCursos.btn_actualizarCurso.addActionListener(this);
         this.vistaCursos.btn_eliminarCurso.addActionListener(this);
-        this.vistaCursos.btn_listarC.addActionListener(this);
-        this.vistaCursos.btn_listaPro.addActionListener(this);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Agregar curso
         if (e.getSource() == vistaCursos.btn_registrarCurso) {
             int codigo = Integer.parseInt(vistaCursos.jtf_codigoCurso.getText());
             String nombre = vistaCursos.jtf_nombreCurso.getText();
             int cedulaProfesor = Integer.parseInt(vistaCursos.jtf_profesorCurso.getText());
+            int codigoPrograma = Integer.parseInt(vistaCursos.jtf_codigo_programa.getText());
 
             Profesor profesor = modelo.buscarProfesor(cedulaProfesor);
+            Programa programas = modelo.consultarPrograma(codigoPrograma);
             if (profesor != null) {
-                Curso curso = new Curso(codigo, nombre, profesor);
+                Curso curso = new Curso(codigo, nombre, profesor, programas);
                 modelo.registrarCurso(curso);
                 vistaCursos.mostrarMensaje("Curso registrado con exito.");
                 limpiarCampos();
             } else {
-                vistaCursos.mostrarMensaje("Profesor no encontrado.");
+                vistaCursos.mostrarMensaje("Profesor o Programa no encontrado.");
             }
         } 
+        
+        //Consutar curso
         else if (e.getSource() == vistaCursos.btn_buscarCurso) {
             int codigo = Integer.parseInt(vistaCursos.jtf_codigoCurso.getText());
             Curso curso = modelo.buscarCurso(codigo);
@@ -56,6 +61,8 @@ public class ControladorCursosGUI implements ActionListener {
                 vistaCursos.mostrarMensaje("Curso no encontrado.");
             }
         } 
+        
+        //Acutalizar curso
         else if (e.getSource() == vistaCursos.btn_actualizarCurso) {
             int codigo = Integer.parseInt(vistaCursos.jtf_codigoCurso.getText());
             Curso curso = modelo.buscarCurso(codigo);
@@ -74,18 +81,15 @@ public class ControladorCursosGUI implements ActionListener {
                 vistaCursos.mostrarMensaje("Curso no encontrado.");
             }
         } 
+        
+        //Eliminar Curso
         else if (e.getSource() == vistaCursos.btn_eliminarCurso) {
             int codigo = Integer.parseInt(vistaCursos.jtf_codigoCurso.getText());
             boolean eliminado = modelo.eliminarCurso(codigo);
             vistaCursos.mostrarMensaje(eliminado ? "Curso eliminado." : "Curso no encontrado.");
             limpiarCampos();
         }
-        else if (e.getSource() == vistaCursos.btn_listarC){
-            vistaCursos.mostrarLista(modelo.listarCursos());
-        }
-        else if (e.getSource() == vistaCursos.btn_listaPro){
-            vistaCursos.mostrarLista(modelo.listarProfesores());
-        }
+
     }
     
     private void limpiarCampos() {

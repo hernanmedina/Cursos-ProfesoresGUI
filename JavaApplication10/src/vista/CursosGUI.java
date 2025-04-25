@@ -38,8 +38,8 @@ public class CursosGUI extends javax.swing.JFrame {
         btn_registrarCurso = new javax.swing.JButton();
         btn_buscarCurso = new javax.swing.JButton();
         btn_actualizarCurso = new javax.swing.JButton();
-        btn_listarC = new javax.swing.JButton();
-        btn_listaPro = new javax.swing.JButton();
+        jlb_codigo_programa = new javax.swing.JLabel();
+        jtf_codigo_programa = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cursos Univalle");
@@ -61,23 +61,20 @@ public class CursosGUI extends javax.swing.JFrame {
 
         btn_actualizarCurso.setText("Atualizar");
 
-        btn_listarC.setText("Listar Cursos");
-
-        btn_listaPro.setText("Listar Profesores");
-        btn_listaPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_listaProActionPerformed(evt);
-            }
-        });
+        jlb_codigo_programa.setText("Codigo Programa:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlb_codigo_programa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtf_codigo_programa, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -89,16 +86,13 @@ public class CursosGUI extends javax.swing.JFrame {
                             .addComponent(jtf_nombreCurso)
                             .addComponent(jtf_profesorCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btn_registrarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                .addComponent(btn_actualizarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(btn_listarC, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_registrarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(btn_actualizarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btn_buscarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_eliminarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                            .addComponent(btn_listaPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btn_eliminarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))))
                 .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
@@ -118,7 +112,11 @@ public class CursosGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtf_profesorCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlb_codigo_programa)
+                    .addComponent(jtf_codigo_programa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_registrarCurso)
                     .addComponent(btn_buscarCurso))
@@ -126,19 +124,11 @@ public class CursosGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_actualizarCurso)
                     .addComponent(btn_eliminarCurso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_listarC)
-                    .addComponent(btn_listaPro))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btn_listaProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listaProActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_listaProActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +160,7 @@ public class CursosGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CursosGUI().setVisible(true);
+                new CursosGUI().setVisible(true);    
             }
         });
     }
@@ -188,14 +178,14 @@ public class CursosGUI extends javax.swing.JFrame {
     public javax.swing.JButton btn_actualizarCurso;
     public javax.swing.JButton btn_buscarCurso;
     public javax.swing.JButton btn_eliminarCurso;
-    public javax.swing.JButton btn_listaPro;
-    public javax.swing.JButton btn_listarC;
     public javax.swing.JButton btn_registrarCurso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jlb_codigo_programa;
     public javax.swing.JTextField jtf_codigoCurso;
+    public javax.swing.JTextField jtf_codigo_programa;
     public javax.swing.JTextField jtf_nombreCurso;
     public javax.swing.JTextField jtf_profesorCurso;
     // End of variables declaration//GEN-END:variables

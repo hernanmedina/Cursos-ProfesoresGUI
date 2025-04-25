@@ -25,6 +25,10 @@ public class GestionUnivalleGUI extends javax.swing.JFrame {
         btn_gestionCursos = new javax.swing.JButton();
         btn_gestionProfesores = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btn_gestion_Programa = new javax.swing.JButton();
+        btn_listar_cursos = new javax.swing.JButton();
+        btn_listar_profesores = new javax.swing.JButton();
+        btn_listar_programas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestion Univalle");
@@ -46,6 +50,24 @@ public class GestionUnivalleGUI extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Menu Gestion Cursos y Profesores de la Universidad Del Valle");
 
+        btn_gestion_Programa.setText("Registrar Programa");
+        btn_gestion_Programa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_gestion_ProgramaActionPerformed(evt);
+            }
+        });
+
+        btn_listar_cursos.setText("Listar Cursos");
+
+        btn_listar_profesores.setText("Listar Profesores");
+        btn_listar_profesores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_listar_profesoresActionPerformed(evt);
+            }
+        });
+
+        btn_listar_programas.setText("Listar Programas");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,14 +76,23 @@ public class GestionUnivalleGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(132, 132, 132)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btn_gestionProfesores, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                            .addComponent(btn_gestionCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btn_gestionCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_gestion_Programa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btn_listar_profesores, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_listar_cursos, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_listar_programas, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +103,14 @@ public class GestionUnivalleGUI extends javax.swing.JFrame {
                 .addComponent(btn_gestionProfesores)
                 .addGap(27, 27, 27)
                 .addComponent(btn_gestionCursos)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(btn_gestion_Programa)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_listar_cursos)
+                    .addComponent(btn_listar_profesores)
+                    .addComponent(btn_listar_programas))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
@@ -85,6 +123,14 @@ public class GestionUnivalleGUI extends javax.swing.JFrame {
     private void btn_gestionProfesoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gestionProfesoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_gestionProfesoresActionPerformed
+
+    private void btn_gestion_ProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gestion_ProgramaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_gestion_ProgramaActionPerformed
+
+    private void btn_listar_profesoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listar_profesoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_listar_profesoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +170,10 @@ public class GestionUnivalleGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btn_gestionCursos;
     public javax.swing.JButton btn_gestionProfesores;
+    public javax.swing.JButton btn_gestion_Programa;
+    public javax.swing.JButton btn_listar_cursos;
+    public javax.swing.JButton btn_listar_profesores;
+    public javax.swing.JButton btn_listar_programas;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

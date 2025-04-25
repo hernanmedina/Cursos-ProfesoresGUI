@@ -14,5 +14,6 @@ public class Principal {
         GestionUnivalleGUI vistaPrincipal = new GestionUnivalleGUI();
         new ControladorGestionUnivalleGUI(modelo, vistaPrincipal);
         vistaPrincipal.setVisible(true);
+        vistaPrincipal.setLocationRelativeTo(null);
     }
 }

@@ -1,7 +1,6 @@
 package modelo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -12,6 +11,50 @@ public class GestionUnivalle {
     
     private List<Profesor> profesores = new ArrayList<>();
     private List<Curso> cursos = new ArrayList<>();
+    private List<Programa> programas = new ArrayList<>();
+    
+    public void agregarPrograma(Programa pr){
+        programas.add(pr);
+    }
+    
+    public Programa consultarPrograma(int codigo){
+        for (Programa pr: programas) {
+            if (pr.getCodigo()== codigo) {
+                return pr;
+            }
+        }
+        return null;
+    }
+    
+    public boolean actualizarPrograma(Programa programaActualizado){
+        for (int i = 0; i < programas.size(); i++) {
+            if (programas.get(i).getCodigo()== programaActualizado.getCodigo()) {
+                programas.set(i, programaActualizado);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean eliminarPrograma(int codigo){
+        for (int i = 0; i < programas.size(); i++) {
+            if (programas.get(i).getCodigo()== codigo) {
+                programas.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public String listarProgramas() {
+        StringBuilder sb = new StringBuilder();
+        for (Programa pr : programas) {
+            sb.append("Codigo: ").append(pr.getCodigo())
+              .append(", Nombre: ").append(pr.getNombre())
+              .append("\n");
+        }
+        return sb.toString().isEmpty() ? "No hay programas registrados." : sb.toString();
+    }
     
     public void registrarProfesor(Profesor profesor){
         profesores.add(profesor);
@@ -45,7 +88,9 @@ public class GestionUnivalle {
             sb.append("Codigo: ").append(c.getCodigo())
               .append(", Nombre: ").append(c.getNombre())
               .append(", Profesor: ").append(c.getProfesor().getNombre())
-              .append(", Profesor: ").append(c.getProfesor().getNumCedula())
+              .append(", Cedula: ").append(c.getProfesor().getNumCedula())
+              .append(", Programa: ").append(c.getPrograma().getNombre())
+              .append(", Codigo: ").append(c.getPrograma().getCodigo())
               .append("\n");
         }
         return sb.toString().isEmpty() ? "No hay cursos registrados." : sb.toString();

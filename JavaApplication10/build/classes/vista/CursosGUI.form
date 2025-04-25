@@ -25,9 +25,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jlb_codigo_programa" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jtf_codigo_programa" min="-2" pref="141" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -42,18 +47,14 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btn_registrarCurso" pref="134" max="32767" attributes="0"/>
-                              <Component id="btn_actualizarCurso" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="btn_listarC" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btn_registrarCurso" pref="134" max="32767" attributes="0"/>
+                          <Component id="btn_actualizarCurso" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="24" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btn_buscarCurso" alignment="0" max="32767" attributes="0"/>
                           <Component id="btn_eliminarCurso" alignment="0" pref="148" max="32767" attributes="0"/>
-                          <Component id="btn_listaPro" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -81,7 +82,12 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtf_profesorCurso" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlb_codigo_programa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtf_codigo_programa" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btn_registrarCurso" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_buscarCurso" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -91,12 +97,7 @@
                   <Component id="btn_actualizarCurso" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_eliminarCurso" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn_listarC" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn_listaPro" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,21 +171,12 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_listarC">
+    <Component class="javax.swing.JLabel" name="jlb_codigo_programa">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Listar Cursos"/>
+        <Property name="text" type="java.lang.String" value="Codigo Programa:"/>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_listaPro">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Listar Profesores"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_listaProActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="jtf_codigo_programa">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
